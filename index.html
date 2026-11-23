@@ -62,6 +62,12 @@
   footer a { color: var(--gold-2); }
   footer .motto { color: var(--gold-2); font-family: 'Noto Serif KR', serif; margin-top: 6px; }
   @media (prefers-reduced-motion: reduce) { .hint svg, .f-btn { animation: none; } }
+  .toon { display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: center; margin: 0 0 44px; padding: 16px; border-radius: 16px; background: var(--night); color: #F0ECE6; text-decoration: none; }
+  .lights { display: flex; flex-direction: column; gap: 4px; background: #111; border-radius: 8px; padding: 6px 5px; }
+  .lights i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+  .toon strong { display: block; font-family: 'Noto Serif KR', serif; font-size: 1em; }
+  .toon span { font-size: .78em; color: #A9A3BE; }
+  .toon em { font-style: normal; font-size: .75em; font-weight: 700; color: #2A1F05; background: var(--gold-2); border-radius: 999px; padding: 6px 12px; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -88,11 +94,16 @@
   <h2 class="sub-h">지난 말씀</h2>
   <p class="sub-p">최근 주일이 위에 있어요.</p>
   <ul>
-    <!-- 지난 주일을 이 아래에 최신순으로 추가합니다. 예:
-    <li><a href="1115.html"><span class="d">11월 15일<small>주일</small></span><span class="t">설교 제목</span><span class="go">보기 ›</span><span class="s">본문</span></a></li>
-    -->
+    <!-- 지난 주일을 이 아래에 최신순으로 추가합니다 -->
+    <li><a href="1115.html"><span class="d">11월 15일<small>추수감사주일</small></span><span class="t">넘치는 감사로 살아갑니다!</span><span class="go">보기 ›</span><span class="s">레위기 23:39-43</span></a></li>
   </ul>
   <p class="empty" id="empty">지난 말씀이 이곳에 차곡차곡 쌓입니다.</p>
+
+  <a class="toon" href="https://music4happy.github.io/goodpeopletoon/" target="_blank" rel="noopener">
+    <span class="lights" aria-hidden="true"><i style="background:#E5484D"></i><i style="background:#F5C542"></i><i style="background:#3FB950"></i></span>
+    <span><strong>굿피플툰 · 착한이웃다움</strong><span>착한이웃교회 이야기를 웹툰으로 만나 보세요</span></span>
+    <em>보기 ›</em>
+  </a>
 </div></main>
 
 <footer>

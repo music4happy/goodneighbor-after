@@ -624,7 +624,7 @@
   var PAGE_URL = 'https://music4happy.github.io/goodneighbor-after/1122.html';
   var PAGE_TITLE = '주일 이후 · 모든 빚은 사라졌습니다!';
   var PAGE_TEXT = '11월 22일 설교 「모든 빚은 사라졌습니다!」(레 25:8-12)를 나눕니다.';
-  var SERMON = { id: '', title: '모든 빚은 사라졌습니다! · 설교 영상' };   // 설교 유튜브 영상 ID
+  var SERMON = { id: '3blrSbw2N6s', start: 0, title: '모든 빚은 사라졌습니다! · 설교 영상' };   // 설교 유튜브 영상 ID
   var PODCAST = { id: '', title: '' };                                      // 팟캐스트 영상 ID가 생기면 넣으세요 (비우면 '3분 요약 듣기')
   var SHORTS = [                                                            // 쇼츠 ID를 넣으면 바로 연결됩니다
     { id: '', title: '휴지통까지 비우는 날', time: '', img: '1122-p2.jpg' },
@@ -659,9 +659,9 @@
   /* 설교·팟캐스트 재생 */
   function openPlayer(item) {
     stopSpeak();
-    $('playerFrame').innerHTML = '<iframe src="https://www.youtube.com/embed/' + item.id + '?autoplay=1&rel=0&playsinline=1" title="' + item.title + '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    $('playerFrame').innerHTML = '<iframe src="https://www.youtube.com/embed/' + item.id + '?autoplay=1&rel=0&playsinline=1' + (item.start ? '&start=' + item.start : '') + '" title="' + item.title + '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
     $('playerTitle').textContent = item.title;
-    $('playerYt').href = 'https://youtu.be/' + item.id;
+    $('playerYt').href = 'https://youtu.be/' + item.id + (item.start ? '?t=' + item.start : '');
     $('player').classList.add('on');
     $('player').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
