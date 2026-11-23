@@ -81,6 +81,7 @@
   .nav-in::-webkit-scrollbar { display: none; }
   .chip { flex: none; min-height: 40px; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--gold-line); background: var(--paper); color: var(--ink); font: inherit; font-size: .8em; font-weight: 500; cursor: pointer; white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center; }
   .chip.dark { background: var(--night); color: #fff; border-color: var(--night); }
+  .chip.home { background: var(--gold-2); border-color: var(--gold-2); color: #2A1F05; font-weight: 700; }
 
   /* SECTIONS */
   section { padding: 36px 22px; scroll-margin-top: 64px; }
@@ -352,6 +353,7 @@
     <a class="chip" href="#step">우리의 이레</a>
     <a class="chip" href="#shorts">장면 다시 보기</a>
     <button class="chip dark" id="btnFont" type="button" aria-pressed="false">글자 크게</button>
+    <a class="chip home" href="./">지난주 모음 ›</a>
   </div>
 </nav>
 
@@ -575,7 +577,7 @@
   <div class="wrap">
     <p class="sec-label">나누기</p>
     <h2 class="sec-title">이 말씀이 필요한 분께<br>전해 주세요</h2>
-    <button class="btn btn-kakao" id="btnShare" type="button">카카오톡으로 이 페이지 보내기</button>
+    <button class="btn btn-kakao" id="btnShare" type="button">카카오톡으로 「주일 이후」 보내기</button>
     <button class="btn btn-line" id="btnShareYt" type="button">설교 영상 링크 보내기</button>
     <a class="btn btn-line" href="./">지난 「주일 이후」 모아보기</a>
   </div>
@@ -697,7 +699,7 @@
 
   /* 나누기 */
   $('btnAcct').addEventListener('click', function () { copy(ACCOUNT, '계좌번호를 복사했어요.'); });
-  $('btnShare').addEventListener('click', function () { share({ title: PAGE_TITLE, text: PAGE_TEXT, url: PAGE_URL }, PAGE_URL); });
+  $('btnShare').addEventListener('click', function () { share({ title: '착한이웃교회 · 주일 이후', text: '착한이웃교회 「주일 이후」 · 주차별 말씀을 한곳에서 보세요.', url: 'https://music4happy.github.io/goodneighbor-after/' }, 'https://music4happy.github.io/goodneighbor-after/'); });
   $('btnShareYt').addEventListener('click', function () { var u = ytUrl(SERMON.id, SERMON.start); share({ title: '넘치는 감사로 살아갑니다!', text: '착한이웃교회 11월 15일 추수감사주일 설교', url: u }, u); });
 
   /* 기도제목 */
