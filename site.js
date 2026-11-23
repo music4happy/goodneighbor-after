@@ -2,7 +2,7 @@
 (function () {
   var SITE = {
     youtube: 'https://www.youtube.com/@goodpeople-church',   // 착한이웃TV
-    instagram: ''                                            // 예: 'https://www.instagram.com/아이디/'  (비우면 버튼이 숨겨집니다)
+    instagram: 'https://www.instagram.com/good_people_church/'                                            // 예: 'https://www.instagram.com/아이디/'  (비우면 버튼이 숨겨집니다)
   };
   window.GN_SITE = SITE;
 
