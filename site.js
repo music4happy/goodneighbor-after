@@ -31,10 +31,12 @@
   if ('serviceWorker' in navigator) { window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); }); }
 
   /* 어디서든 착한이웃교회 홈으로 */
+  if (!document.querySelector('.gn-home') && /\d{4}\.html$/.test(location.pathname)) {
   var hs = document.createElement('style');
   hs.textContent = '.gn-home{position:fixed;top:calc(10px + env(safe-area-inset-top));right:12px;z-index:60;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 14px 6px 10px;border-radius:999px;background:rgba(28,23,49,.92);color:#fff;text-decoration:none;font:700 14px/1 "Noto Sans KR",sans-serif;box-shadow:0 4px 14px rgba(0,0,0,.25);border:1px solid rgba(226,185,92,.6)}.gn-home svg{width:20px;height:20px}.nav-in{padding-right:96px!important}';
   document.head.appendChild(hs);
   var hb = document.createElement('a'); hb.className = 'gn-home'; hb.href = '/'; hb.setAttribute('aria-label', '착한이웃교회 홈으로');
   hb.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#E2B95C" stroke-width="2.2" stroke-linejoin="round"><path d="M3 11 12 3l9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>홈';
   document.body.appendChild(hb);
+  }
 })();
