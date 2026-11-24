@@ -781,7 +781,7 @@
     if (want.checked && !$('cName').value.trim() && !$('cPhone').value.trim()) { showMsg('err', '연락을 원하시면 이름이나 연락처를 남겨 주세요.'); return; }
     if (!hasApi) {
       var m = '[착한이웃교회 기도제목 · ' + SERMON_DATE + ']\n' + (selected.length ? '주제: ' + selected.join(', ') + '\n' : '') + (text ? '\n' + text + '\n' : '') + (want.checked ? '\n연락 원함: ' + $('cName').value.trim() + ' ' + $('cPhone').value.trim() : '');
-      if (navigator.share) navigator.share({ text: m }).catch(function () {}); else copy(m, '기도제목을 복사했어요. 목사님 카톡에 붙여 넣어 주세요.');
+      var KK = (window.GN_SITE && window.GN_SITE.kakao) || ''; if (KK) { var go = function () { location.href = KK; }; if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(m).then(function () { toast('기도제목을 복사했어요. 목사님 채팅창에 붙여 넣어 주세요.'); setTimeout(go, 900); }, go); } else go(); return; } if (navigator.share) navigator.share({ text: m }).catch(function () {}); else copy(m, '기도제목을 복사했어요. 목사님 카톡에 붙여 넣어 주세요.');
       return;
     }
     sendBtn.disabled = true; sendBtn.textContent = '보내는 중...';

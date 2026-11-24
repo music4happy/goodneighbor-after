@@ -2,7 +2,8 @@
 (function () {
   var SITE = {
     youtube: 'https://www.youtube.com/@goodpeople-church',   // 착한이웃TV
-    instagram: 'https://www.instagram.com/good_people_church/'                                            // 예: 'https://www.instagram.com/아이디/'  (비우면 버튼이 숨겨집니다)
+    instagram: 'https://www.instagram.com/good_people_church/',
+    kakao: ''                                                // 목사님 카카오톡 채널(1:1 채팅) 또는 오픈채팅 주소. 넣으면 '카톡으로 목사님께 보내기'가 바로 그 채팅으로 연결됩니다.                                            // 예: 'https://www.instagram.com/아이디/'  (비우면 버튼이 숨겨집니다)
   };
   window.GN_SITE = SITE;
 
